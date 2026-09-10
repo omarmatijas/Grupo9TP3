@@ -8,11 +8,19 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Grupo9
+ * @author gonza
  */
 public class formulario_login extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(formulario_login.class.getName());
+
+    /**
+     * Creates new form formulario_login
+     */
+    public formulario_login() {
+        initComponents();
+        setLocationRelativeTo(null);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -141,17 +149,28 @@ public class formulario_login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-
-    }//GEN-LAST:event_btnRegistrarActionPerformed
+    private void btnOcultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOcultarActionPerformed
+        txtContraseña.setEchoChar('*');
+    }//GEN-LAST:event_btnOcultarActionPerformed
 
     private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
-
+        txtContraseña.setEchoChar((char) 0);
     }//GEN-LAST:event_btnVerActionPerformed
 
-    private void btnOcultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOcultarActionPerformed
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        //Al presionar el boton registrar se guarda el contenido char[]
+        //que devuelve txtcontraseña en un nuevo char[], luego se convierte a String
 
-    }//GEN-LAST:event_btnOcultarActionPerformed
+        char[] arregloDeCaracteres = txtContraseña.getPassword();
+        String password = String.valueOf(arregloDeCaracteres);
+        String usuario = txtUsuario.getText();
+        if (usuario.equals("aaa") && password.equals("123")) {
+            JOptionPane.showMessageDialog(this, "¡Bienvenido al sistema!\n" + usuario);
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrectos");
+
+        }
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
