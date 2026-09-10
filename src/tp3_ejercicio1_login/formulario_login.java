@@ -164,7 +164,7 @@ public class formulario_login extends javax.swing.JFrame {
         char[] arregloDeCaracteres = txtContraseña.getPassword();
         String password = String.valueOf(arregloDeCaracteres);
         String usuario = txtUsuario.getText();
-        if (usuario.equals("aaa") && password.equals("123")) {
+        if (usuario.equals("alumno@ulp.edu.ar") && password.equals("12345678")) {
             JOptionPane.showMessageDialog(this, "¡Bienvenido al sistema!\n" + usuario);
         } else {
             JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrectos");
